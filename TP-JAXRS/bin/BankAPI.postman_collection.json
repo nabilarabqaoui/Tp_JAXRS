@@ -1,0 +1,242 @@
+{
+    "info": {
+        "_postman_id": "unique-collection-id",
+        "name": "Bank Account API Tests - JSON & XML",
+        "description": "Test configurations for Bank Account REST API with JSON and XML formats",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "JSON Requests",
+            "item": [
+                {
+                    "name": "GET All Accounts (JSON)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes"]
+                        }
+                    }
+                },
+                {
+                    "name": "GET Account by ID (JSON)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "CREATE Account (JSON)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"solde\": 1000.00, \"dateCreation\": \"2024-10-31\", \"type\": \"COURANT\"}"
+                        }
+                    }
+                },
+                {
+                    "name": "UPDATE Account (JSON)",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"solde\": 2000.00, \"dateCreation\": \"2024-10-31\", \"type\": \"EPARGNE\"}"
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE Account (JSON)",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "XML Requests",
+            "item": [
+                {
+                    "name": "GET All Accounts (XML)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/xml"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes"]
+                        }
+                    }
+                },
+                {
+                    "name": "GET Account by ID (XML)",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/xml"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "CREATE Account (XML)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/xml"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<compte>\n    <solde>1000.00</solde>\n    <dateCreation>2024-10-31</dateCreation>\n    <type>COURANT</type>\n</compte>"
+                        }
+                    }
+                },
+                {
+                    "name": "UPDATE Account (XML)",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/xml"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<compte>\n    <solde>2000.00</solde>\n    <dateCreation>2024-10-31</dateCreation>\n    <type>EPARGNE</type>\n</compte>"
+                        }
+                    }
+                },
+                {
+                    "name": "DELETE Account (XML)",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/xml"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:8082/banque/comptes/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8082",
+                            "path": ["banque", "comptes", "1"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
